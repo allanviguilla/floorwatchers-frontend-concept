@@ -1,5 +1,8 @@
 import logo from '../assets/fwsLogo.png';
-import styles from '../App.module.css'
+import styles from '../App.module.css';
+
+import discord from '../assets/discord.png';
+import twitter from '../assets/twitter.png';
 
 export default function Navbar() {
 
