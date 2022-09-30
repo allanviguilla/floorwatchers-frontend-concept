@@ -1,4 +1,4 @@
-*, html, body, header {
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -6,16 +6,25 @@
   /* outline: 3px solid limegreen !important; */
 }
 
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .logo {
-  width: 120px;
-  height: 75px;
+  width: 100px;
 }
 
 .nav {
-  padding: 1.2rem;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 15vh;
 }
 
 .hamburger {
@@ -23,7 +32,7 @@
 }
 
 .main {
-  height: 100vh;
+  height: 85vh;
 }
 
 .mainPanel {
@@ -37,15 +46,19 @@
   position: absolute;
   bottom: 0;
   height: 60%;
+  animation-name: fade;
+  animation-duration: 3s;
 }
 
 .centerContent {
   display: grid;
   place-items: center;
+  animation-name: fade;
+  animation-duration: 3s;
 }
 
-.socials {
-  padding: 1rem 0.25rem;
+.socialIcons {
+  display: none;
 }
 
 .red {
@@ -53,6 +66,10 @@
 }
 
 .purple {
+  display: none;
+}
+
+.green {
   display: none;
 }
 
@@ -84,10 +101,13 @@
     display: none;
   }
 
+  .socialIcons {
+    display: block;
+  }
+
   .main {
     display: flex;
     flex-wrap: wrap;
-    /* overflow: scroll; */
   }
 
   .mainPanel {
@@ -108,9 +128,16 @@
     position: relative;
     display:flex;
     flex-direction:column;
-    min-height:100%;
     width:4%;
     transition: all 0.8s ease;
+    height: 85vh;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  .panel::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
   }
 
   .panelTitle {
@@ -126,57 +153,6 @@
     z-index:75;
   }
 
-  @keyframes fade {
-    0% {
-      opacity: 0;
-    }
-    80% {
-      opacity: 0.5;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  .roadmapGrid {
-    color: white;
-    font-weight: 300;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-    padding: 2rem;
-    animation-name: fade;
-    animation-duration: 1s;
-  }
-
-  .roadmapGrid h3 {
-    font-size: 4rem;
-    font-weight: 900;
-    color: #291381;
-    padding: 2.5rem 0;
-  }
-
-  .roadmapGrid h5 {
-    font-size: 1.7rem;
-    padding: 0.7rem 0;
-  }
-
-  .roadmapGrid p {
-    font-size: 1.2rem;
-  }
-
-  .gridColSpan4 {
-    grid-column: span 4;
-  }
-
-  .gridColSpan2 {
-    grid-column: span 2;
-  }
-
-  .gridRowSpan2 {
-    grid-row: span 2;
-  }
-
   .blue {
     background-color: #4739EB;
     z-index: 50;
@@ -185,6 +161,154 @@
   .green {
     background-color: #01FFA3;
     z-index: 25;
+  }
+
+  .roadmapGrid {
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    padding: 2rem;
+    height: 100%;
+    grid-template-areas:
+    "title title title title"
+    "dao dao dao dao"
+    "floor floor societyDraw societyDraw "
+    "drawPackage drawPackage mysteryPackage brunchBets";
+    animation-name: fade;
+    animation-duration: 3s;
+  }
+
+  .roadmapGrid img{
+    width: 100px;
+  }
+
+  .roadmapTitle {
+    grid-area: title;
+  }
+
+  .roadmapTitle h3 {
+    color: #291381;
+    font-size: 3rem;
+    padding: 2rem 2rem;
+  }
+
+  .dao {
+    grid-area: dao;
+  }
+
+  .dao img {
+    width: 150px;
+  }
+
+  .societyDraw {
+    grid-area: societyDraw;
+  }
+
+  .societyDraw img {
+    width: 125px;
+  }
+
+  .drawPackage {
+    grid-area: drawPackage;
+  }
+
+  .drawPackage img {
+    width: 150px;
+  }
+
+  .drawPackage h5 {
+    color: #291381;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    text-transform: uppercase;
+  }
+
+  .mysteryPackage {
+    grid-area: mysteryPackage;
+  }
+
+  .mysteryPackage img {
+    width: 125px;
+  }
+
+  .brunchBets {
+    grid-area: brunchBets;
+  }
+
+  .brunchBets img {
+    width: 125px;
+  }
+
+  .floor {
+    grid-area: floor;
+  }
+
+  .floor img{
+    width: 200px;
+  }
+
+  .teamGrid {
+    color: #291381;
+    display: grid;
+    gap: 1rem;
+    padding: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+    "title title"
+    "khalil sommo"
+    "allan juan";
+    animation-name: fade;
+    animation-duration: 3s;
+  }
+
+  .khalil {
+    grid-area: khalil;
+  }
+
+  .sommo {
+    grid-area: sommo;
+  }
+
+  .allan {
+    grid-area: allan;
+  }
+
+  .juan {
+    grid-area: juan;
+  }
+
+  .teamPfp {
+    width: 35%;
+    border-radius: 100%;
+  }
+
+  .profile {
+    display: grid;
+    place-items: center;
+  }
+
+  .profile h5 {
+    font-size: 2rem;
+    padding-top: 1rem;
+  }
+
+  .profile h6 {
+    font-size: 1.2rem;
+    font-weight: 300;
+  }
+
+  .profileSocial {
+    width: 25px;
+  }
+
+  .teamTitle {
+    grid-area: title;
+  }
+
+  .teamTitle h3 {
+    font-size: 3rem;
+    padding: 2rem 2rem;
   }
 }
 

@@ -15,6 +15,10 @@ export default function Navbar() {
           <rect y="30" width="100" height="15" fill="black"></rect>
           <rect y="60" width="100" height="15" fill="black"></rect>
         </svg>
+        <div className={styles.socialIcons}>
+          <img src={twitter}/>
+          <img src={discord} style={{paddingLeft: '1rem'}}/>
+        </div>
       </nav>
     </header>
   );
