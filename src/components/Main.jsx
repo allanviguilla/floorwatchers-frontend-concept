@@ -1,6 +1,10 @@
 import { useState, useEffect } from 'react';
 import styles from '../App.module.css'
 
+import khalil from '../assets/khalil.png';
+import sommo from '../assets/sommo.png';
+import allan from '../assets/allan.png';
+import juan from '../assets/juan.png';
 import twitter from '../assets/twitter_white.png'
 
 export default function Main() {
@@ -16,14 +20,11 @@ export default function Main() {
   const handleClick = event => {
     if (event.target.className.includes(styles.mainPanel)) {
       setActive(styles.mainPanel)
-    }
-    if (event.target.className.includes(styles.purple)) {
+    } else if (event.target.className.includes(styles.purple)) {
       setActive(styles.purple)
-    }
-    if (event.target.className.includes(styles.green)) {
+    } else if (event.target.className.includes(styles.green)) {
       setActive(styles.green)
-    }
-    if (event.target.className.includes(styles.blue)) {
+    } else if (event.target.className.includes(styles.blue)) {
       setActive(styles.blue)
     }
   }
@@ -95,6 +96,76 @@ export default function Main() {
         onClick={(event) => {handleClick(event)}}
         >
           <div className={!blueActive ? styles.hidePanel : ''}>
+            <div className={styles.faqGrid}>
+              <div className={styles.faqTitle}>
+                <h3>FREQUENTLY ASKED QUESTIONS</h3>
+              </div>
+              <div className={styles.accordion}>
+                <div className={styles.item}>
+                  <div className={styles.question}>
+                    <h5>What is Floor Watchers Society?</h5>
+                    <span>+</span>
+                  </div>
+                  <div className={styles.answer}>
+                    <p>Floor Watchers Society is a conglomerate of real-life utility projects hosted on the Solana blockchain.</p>
+                  </div>
+                </div>
+                <div className={styles.item}>
+                  <div className={styles.question}>
+                    <h5>What is the total supply?</h5>
+                    <span>+</span>
+                  </div>
+                  <div className={styles.answer}>
+                    <p>3,333 Floor Watchers</p>
+                  </div>
+                </div>
+                <div className={styles.item}>
+                  <div className={styles.question}>
+                    <h5>Wen mint?</h5>
+                    <span>+</span>
+                  </div>
+                  <div className={styles.answer}>
+                    <p>Soon come. Sign up to the mailing list for updates.</p>
+                  </div>
+                </div>
+                <div className={styles.item}>
+                  <div className={styles.question}>
+                    <h5>How much will a Floor Watcher cost?</h5>
+                    <span>+</span>
+                  </div>
+                  <div className={styles.answer}>
+                    <p>The price will be $299 USD worth of $SOL the week of mint. Our team came to this price point to be able to cover the utility cost, as well as future sustainability.</p>
+                  </div>
+                </div>
+                <div className={styles.item}>
+                  <div className={styles.question}>
+                    <h5>How do I win tickets?</h5>
+                    <span>+</span>
+                  </div>
+                  <div className={styles.answer}>
+                    <p>Holding at least one (1) Floor Watcher in your wallet makes you eligible to win tickets. Floor Watchers cannot have their NFT listed or staked to be included in the raffle before a snapshot is taken. Additionally, Floor Watchers can use $FLOOR to redeem packages.</p>
+                  </div>
+                </div>
+                <div className={styles.item}>
+                  <div className={styles.question}>
+                    <h5>Does my location matter regarding tickets?</h5>
+                    <span>+</span>
+                  </div>
+                  <div className={styles.answer}>
+                    <p>In the USA, tickets must available on Ticketmaster, SeatGeek, or the Team’s official website. For Non-US Floor Watchers tickets must be available on the Team/league official website or Ticketmaster.</p>
+                  </div>
+                </div>
+              </div>
+              <div className={styles.whitepaper}>
+                <h5><a href="https://medium.com/@FloorWatchersSociety/floor-watchers-society-season-1-playbook-6eca89cebcbf" target="_blank">READ THE WHITEPAPER</a></h5>
+              </div>
+              <div className={styles.mailingList}>
+                <h5>MAILING LIST</h5>
+              </div>
+              <div className={styles.pfpGirl}>
+                <img src="https://floorwatchers.s3.amazonaws.com/FWS_fan_pfp_bottom_mar2022.png" />
+              </div>
+            </div>
           </div>
         </div>
         <div
@@ -108,25 +179,25 @@ export default function Main() {
                   <h3>MEET THE TEAM</h3>
                 </div>
                 <div className={`${styles.profile} ${styles.khalil}`}>
-                  <img className={styles.teamPfp} src="https://floorwatchers.s3.amazonaws.com/1+KHALIL.png" />
+                  <img className={styles.teamPfp} src={khalil} />
                   <h5>Khalil</h5>
                   <h6>Head of Tech</h6>
-                  <img className={styles.profileSocial} src={twitter} />
+                  <a href="https://twitter.com/khaIilnafis" target="_blank"><img className={styles.profileSocial} src={twitter} /></a>
                 </div>
                 <div className={`${styles.profile} ${styles.sommo}`}>
-                  <img className={styles.teamPfp} src="https://floorwatchers.s3.amazonaws.com/1+SIRA.png" />
+                  <img className={styles.teamPfp} src={sommo} />
                   <h5>Sommo</h5>
                   <h6>Project Manager</h6>
                   <img className={styles.profileSocial} src={twitter} />
                 </div>
                 <div className={`${styles.profile} ${styles.allan}`}>
-                  <img className={styles.teamPfp} src="https://floorwatchers.s3.amazonaws.com/1+ALLAN.png" />
+                  <img className={styles.teamPfp} src={allan} />
                   <h5>Allan</h5>
                   <h6>Front-End Dev</h6>
                   <img className={styles.profileSocial} src={twitter} />
                 </div>
                 <div className={`${styles.profile} ${styles.juan}`}>
-                  <img className={styles.teamPfp} src="https://floorwatchers.s3.amazonaws.com/1+JUAN.png" />
+                  <img className={styles.teamPfp} src={juan} />
                   <h5>Juan</h5>
                   <h6>Head of Design</h6>
                   <img className={styles.profileSocial} src={twitter} />
