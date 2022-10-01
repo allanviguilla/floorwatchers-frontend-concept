@@ -89,7 +89,7 @@
 .mobileNav {
   display: flex;
   justify-content: flex-end;
-  height: 20vh
+  height: 10vh
 }
 
 .mobileBody {
@@ -101,7 +101,11 @@
   line-height: 3rem;
   padding: 2rem 2rem;
   text-align: center;
-  height: 80vh;
+  height: 90vh;
+}
+
+.mobileBody h3 {
+  padding-bottom: 2rem;
 }
 
 @media screen and (max-width: 375px) {
