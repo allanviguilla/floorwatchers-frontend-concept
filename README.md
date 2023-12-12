@@ -1,5 +1,5 @@
 # Floor Watchers Society Front-End Concept
-Create dynamic UI layout for product landing page of NFT website.
+A dynamic UI layout for product landing page of an NFT website
 
 ### Tech Used
 ![Axios](https://img.shields.io/badge/axios-5a29e4.svg?style=for-the-badge&logo=axios&logoColor=white)
